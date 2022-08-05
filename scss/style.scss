@@ -1,9 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/liberation-serif.min.css");
+@import "elementos";
+@import "colores";
+@import "header";
 /*Como llamar: 'Liberation Serif', sans-serif;*/
 
-/*
-https://getbootstrap.com/docs/4.0/getting-started/download/
-*/
 
 /* -------------- MASTER  ------------- */
 *{
@@ -12,119 +12,6 @@ https://getbootstrap.com/docs/4.0/getting-started/download/
     box-sizing:border-box;
 }
 
-
-/* Header */
-.divLogoNombreSitio__imagenLogoSitio {
-    width: 120px;
-    height: 120px;
-    /*
-    float: left;
-    padding-left: 5%;
-    padding-top: 2%;
-    grid-column: 1/1;
-    grid-row: 1/3;
-    */
-}
-
-
-.divLogoNombreSitio__nombreSitio{
-    font-family: 'Courier New', Courier, monospace;
-    font-size: xxx-large;
-    background: linear-gradient(to right, rgba(222, 222, 230, 0.555), rgb(96, 205, 248), rgba(40, 40, 230, 0.925));
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-align: center;
-
-}
-
-.iconHelp {
-    width: 30px;
-    height: 30px;
-    margin-top: 50px;
-    transform: scale(1,1);
-}
-.iconHelp:hover{
-    transform: scale(1.2,1.2);
-}
-
-/*menu*/
-
-.menuSticky {
-    position: sticky;
-    top: 0px;
-    background-color:black;    
-    padding-left: 0%;
-}
-.navMenu {
-    ul {
-        list-style: none;
-        font-size: 0;
-        margin-left: 0%;
-        margin-top: 2%;
-
-        ul {
-            position: absolute;
-            display: none;
-            /*background-color: blanchedalmond;*/
-            border-color: rgb(0, 102, 255);
-            border: 1px solid rgb(54, 54, 27);
-            width: 225px;
-            padding-left: 0;
-            margin-top: 0%;
-        }
-        li{
-            display: inline-block;
-            width: 15%;
-            /*position: relative;*/
-            font-size: 17px;
-            /*border: 1px solid rgb(54, 54, 27);*/
-            text-align: center;
-            margin: 1%;
-            ul {
-                li {
-                    display: block;
-                    text-align: left;
-                    width: auto;
-                    border: 1px solid rgb(54, 54, 27);
-                    background-color:rgba(0, 0, 0, 0.904) ;    
-                }
-            }
-            
-            a {
-                text-decoration: none;
-            }  
-            &:hover ul {
-                display: block;
-            }
-        }
-    }
-}
-
-
-
-.classBody {
-    background-color: black;
-    
-}
-
-
-nav{
-    ul{
-        li{
-            border-style: inset;
-            border-color: rgb(0, 102, 255);
-            /*background-color: blanchedalmond;*/
-            border-radius: 10%;
-            a{
-                color: rgb(0, 102, 255);
-            }
-            &:hover > a {
-                background-color: #f0f3df;
-            }
-        }
-    }
-}
 
 
 
@@ -142,9 +29,7 @@ nav{
     }
 }
 @media only screen and (min-width: 0px) and (max-width: 600px){
-    main .eventosBotones{
-        display: block;
-    }
+
     #divBotonProximosEventos{
         padding-bottom: 20%;
     }
@@ -183,65 +68,78 @@ nav{
     /* FIN Media Query Header */
 
     /* Media Query Proximos Eventos */
-    main .gridProximosEventos {
-        display: block;
-        margin-left: 10%;
-        margin-right: 10%;
-        text-align: center;
-    }
-    main .itemCuandoyDonde {
-        display: block;
+    main {
+        .gridProximosEventos {
+            display: block;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-align: center;
+        }
+        .itemCuandoyDonde {
+            display: block;
+        }
+        .maps {
+            display: flex;
+            justify-content: center;
+            width: auto
+        }
     }
 
-
-    main .maps {
-        display: flex;
-        justify-content: center;;
-        width: auto
+    section {
+        .footerGridProximosEventos{
+            display: block;
+            padding-bottom: 2%;
+        }
+        .categorias {
+            flex-direction: column;  
+            align-items: center; 
+            text-align: center;
+        }    
+    
+        .rangoEdades{
+            display: flex;
+            flex-direction: column;  
+            padding: 2%;
+        } 
     }
 
-    section .footerGridProximosEventos{
-        display: block;
-        padding-bottom: 2%;
+    div {
+        consideraciones {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: azure;
+        }
     }
-    /*
-    section #divcontainerButton {
-        padding-left: 25%;
-        align-items: center;
-    }
-*/
-    div .consideraciones {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        background-color: azure;
-    }
-    .consideraciones .tituloGridHijo {
-        text-align: center;
-    }
-    .consideraciones .ConsideracionesFlex{
-        display: inline-block;
+
+    .consideraciones {
+        .tituloGridHijo {
+            text-align: center;
+        }
+
+        .ConsideracionesFlex{
+            display: inline-block;
+        }
     }
     
+    
 
-    section .categorias {
-        flex-direction: column;  
-        align-items: center; 
-        text-align: center;
-    }    
 
-    section .rangoEdades{
-        display: flex;
-        flex-direction: column;  
-        padding: 2%;
-    }
 
     /* FIN Media Query Proximos Eventos */
 
     
     /* Media Query Inscripcion Evento */
 
-   form .gridInscripcionEventosDatosPers{
+    .gridInscripcionEventosDatosPers > * {
+        border: $verdeBorder;
+        background-color: whitesmoke;
+        background-image: $radialBackground-image;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+
+   .gridInscripcionEventosDatosPers{
         display: grid;
         grid-template-areas: 
         "titulo titulo"
@@ -253,104 +151,98 @@ nav{
         ;
         margin-left: 5%;
         margin-right: 5%;
+        #inscripcionEventosinputApellido{
+            margin-left: 7%;
+        }
+    
+        #tituloInscripcion {
+            grid-area: titulo;
+        }
+    
+        #apellidoInscripcion {
+            grid-area: apellido;
+            border-right: 0;
+        }
+    
+        #nombreInscripcion {
+            grid-area: nombre;
+            border-left: 0;
+        }
+    
+        #documentoInscripcion {
+            grid-area: documento;
+            border-right: 0;
+        }
+    
+        #generoInscripcion {
+            grid-area: genero;
+            border-left: 0;
+        }
+    
+        #fechaNacimientoInscripcion {
+            grid-area: fechanac;
+            border-right: 0;
+        }
+    
+        #equipoInscripcion {
+            grid-area: equipo;
+            border-left: 0;
+        }
+    
+        #datosContactoInscripcion {
+            grid-area: contacto;
+
+        }
+    
+        
+        #divTerminosInscripcion {
+            grid-area: terminos;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 1%;
+        }    
+    
+        #inscripcionEventosinputApellido{
+            margin-left: 21px;
+        }
+        #inscripcionEventosinputNombre{
+            margin-left: 21px;
+        }
+    
+        #inscripcionEventosinputDocumento {
+            margin-left: 1%;
+        }
+        #inscripcionEventossectionEquipo{
+            width: 55%;
+            margin-left: 8%;
+    
+        }
+    
+        #inscripcionFechaNacimientoInscripcion {
+            margin-left: 2%;
+        }
     } 
-    
-
-    .gridInscripcionEventosDatosPers > * {
-        border: 2px solid rgba(57, 201, 141, 0.363);
-        background-color: whitesmoke;
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }
-
-    #inscripcionEventosinputApellido{
-        margin-left: 7%;
-    }
-
-    #tituloInscripcion {
-        grid-area: titulo;
-    }
-
-    #apellidoInscripcion {
-        grid-area: apellido;
-        border-right: 0;
-    }
-
-    #nombreInscripcion {
-        grid-area: nombre;
-        border-left: 0;
-    }
-
-    #documentoInscripcion {
-        grid-area: documento;
-        border-right: 0;
-    }
-
-    #generoInscripcion {
-        grid-area: genero;
-        border-left: 0;
-    }
-
-    #fechaNacimientoInscripcion {
-        grid-area: fechanac;
-        border-right: 0;
-    }
-
-    #equipoInscripcion {
-        grid-area: equipo;
-        border-left: 0;
-    }
-
-    #datosContactoInscripcion {
-        grid-area: contacto;
-    }
-
-    
-    #divTerminosInscripcion {
-        grid-area: terminos;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 1%;
-    }    
-
-    #inscripcionEventosinputApellido{
-        margin-left: 21px;
-    }
-    #inscripcionEventosinputNombre{
-        margin-left: 21px;
-    }
-
-    #inscripcionEventosinputDocumento {
-        margin-left: 1%;
-    }
-    #inscripcionEventossectionEquipo{
-        width: 55%;
-        margin-left: 8%;
-
-    }
-
-    #inscripcionFechaNacimientoInscripcion {
-        margin-left: 2%;
-    }
     /* FIN Media Query Inscripcion Evento */
 
 
     /* Media Query Novedades */
-    .sectionNovedades > .novedadLayoutIzq{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding-bottom: 2%;
-        border-bottom: 15px solid rgba(128, 128, 128, 0.801);
+    .sectionNovedades {
+        .novedadLayoutIzq{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-bottom: 2%;
+            border-bottom: 15px solid rgba(128, 128, 128, 0.801);
+        }
+        .novedadLayoutDer{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-bottom: 2%;
+            border-bottom: 5p1x solid rgba(128, 128, 128, 0.801);
+        }
     }
-    
-    .sectionNovedades > .novedadLayoutDer{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding-bottom: 2%;
-        border-bottom: 5p1x solid rgba(128, 128, 128, 0.801);
-    }
+
 
     /* FIN Media Query Novedades */
 
@@ -469,11 +361,9 @@ nav{
     padding-right: 1%;
     padding-top: 1%;
     background-color: rgba(0, 0, 0, 0.904) ;    
-/*    background-color: rgba(195, 185, 241, 0.568);*/
 }
 
 .section_articlePrincipal {
-    /*background-color: rgba(195, 185, 241, 0.568);*/
     border-style:inset;
     display: inline-block;
     background-color: whitesmoke;   
@@ -481,7 +371,6 @@ nav{
 }
 
 .tituloArticulo {
-    /*padding-left: 25%; */
     font-family: 'Liberation Serif', sans-serif;
     text-align: center;
     font-size: xx-large; 
@@ -490,6 +379,10 @@ nav{
     margin: 10px;
     background-image: linear-gradient(to right, rgba(0, 0, 255, 0.555), rgba(255, 255, 0, 0.521), rgba(90, 90, 155, 0.541), rgba(255, 166, 0, 0.514));
 }
+
+main{
+    background-color: black;
+}
 /* -------------- FIN MASTER  ------------- */
 
 
@@ -497,9 +390,6 @@ nav{
 
 /* -------------- INDEX  ------------- */
 .imagenFondo{
-    /*
-    width: 120%;
-    */
     height: 800px; 
     background-image: linear-gradient(rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.705)),  url('../img/foto_inicio_grey.jpg');
 
@@ -507,19 +397,10 @@ nav{
     background-position-x: center;
     background-size: cover;
     background-blend-mode: soft-light;
-    /*background-color: rgba(48, 69, 100, 0.116);*/
-    /*background-image: url('../img/foto_inicio.jpg');*/
-    /*background: transparent url('../img/foto_inicio.jpg');*/
 }
 
 .h1Bienvenida{
     font-size: 45px;
-    /*font-family: 'Rubik Moonrocks', cursive;*/
-    /*font-family: 'Fredericka the Great', cursive;*/
-    /*font-family: 'Reenie Beanie', cursive;    */
-    /*font-style: italic;*/
-    /*color:rgb(228, 243, 22);*/
-    /*text-shadow: black 0 -3px;*/
     background: linear-gradient(to right, rgba(224, 224, 230, 0.938), rgba(211, 212, 117, 0.863), rgba(252, 101, 1, 0.979));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -584,53 +465,6 @@ nav{
 /* -------------- FIN CONSTRUCCION  ------------- */
 
 
-/* -------------- EVENTOS  ------------- */
-
-
-
-.eventosTitulos h1{
-    font-size: 50px;
-    text-decoration: underline;
-    padding-bottom: 1%;
-}
-
-#eventosP{
-    margin-top: 5%;
-    font-size: 28px;
-    text-align: center;
-}
-.eventosBotones{
-    display: grid;
-    grid-template-areas: 
-    "proximos recientes";
-    text-align: center;
-    padding: 10%;
-}
-
-.eventosBotones > div{
-    padding: 3%;
-}
-#divBotonProximosEventos {
-    grid-area: proximos;
-}
-#divBotonRecientes {
-    grid-area: recientes;
-}
-
-.eventosBotonProximos a{
-    text-decoration: none;
-    background-color: black;
-    color: white;
-    font-size: 20px;
-    font-family: 'Liberation Serif', sans-serif;
-    padding: 20px 30px;
-
-    border-style: inset;
-    border-radius: 10%;    
-    border-color: rgb(0, 102, 255);
-}
-/* -------------- FIN EVENTOS  ------------- */
-
 /* -------------- PROXIMOS EVENTOS  ------------- */
 
 .footerGridProximosEventos{
@@ -654,17 +488,6 @@ nav{
     height: auto;
 }
 
-/*
-.divEvento--left {
-    float: left;
-    width: 50%;
-}
-.divEvento--right {
-    float: right;
-    width: 50%;
-}
-*/
-
 table, th,  td {
     border: 1px solid black;
 }
@@ -672,194 +495,7 @@ th{
     font-style: inherit;
 }
 
-
-
-
-
-#button-container{
-	position:relative;
-	left:0%;
-	width:203px;
-	height:43px;
-	background:#022c3e;
-	padding-top:5px;
-	margin-top:10px;
-	-webkit-border-radius:38px;
-	-moz-border-radius:38px;
-	border-radius:38px;
-	-webkit-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
-	-moz-box-shadow:inset 0 1px 2px #000, 0px 1px 1px rgba(255,255,225,0.2);
-	box-shadow:inset 0 1px 2px #000, 0px 1px 0px rgba(255,255,225,0.3);
-	/*Hover effect*/
-	-webkit-transition: .5s all;
-	-moz-transition: .5s all;
-	-o-transition: .5s all;
-	-ms-transition: .5s all;
-	transition: .5s all;}
-
-#button{
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width:193px;
-	height:38px;
-	margin:0px auto;
-	-webkit-border-radius:20px;
-	-moz-border-radius:20px;
-	border-radius:20px;
-	cursor:pointer;
-
-}
-
-#button p{
-	margin-top: 11px;
-	margin-left:60px;
-	font-size:.9em;
-}
-
-#button-container:hover {
-    box-shadow: none;
-	-webkit-box-shadow: inset 0 1px 2px #000, 0px 0px 10px 5px rgba(255,255,225,0.2);
-}
-
-/*Colors*/
-.yellow{
-/*Gradient*/
-	background: rgb(255,197,120); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(255,197,120,1) 0%, rgba(251,157,35,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,197,120,1)), color-stop(100%,rgba(251,157,35,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(251,157,35,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(251,157,35,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(255,197,120,1) 0%,rgba(251,157,35,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(255,197,120,1) 0%,rgba(251,157,35,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc578', endColorstr='#fb9d23',GradientType=0 ); /* IE6-9 */
-}
-
-.green{
-	background: rgb(205,235,142); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(205,235,142,1) 0%, rgba(165,201,86,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(205,235,142,1)), color-stop(100%,rgba(165,201,86,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(205,235,142,1) 0%,rgba(165,201,86,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdeb8e', endColorstr='#a5c956',GradientType=0 ); /* IE6-9 */
-}
-
-.blue{
-	background: rgb(122,188,255); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122,188,255,1)), color-stop(44%,rgba(96,171,248,1)), color-stop(100%,rgba(64,150,238,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* IE10+ */
-	background: linear-gradient(top, rgba(122,188,255,1) 0%,rgba(96,171,248,1) 44%,rgba(64,150,238,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
-}
-
-/*ICONS*/
-#clock{
-	position:absolute;
-	top:10px;
-	left:20px;
-	width:15px;
-	height:15px;
-	border:2px solid #000;
-	-webkit-border-radius:50%;
-	-moz-border-radius:50%;
-	border-radius:50%;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-	opacity:0.8;
-}
-#clock-hand1{
-	position:absolute;
-	width:0px;
-	height:5px;
-	border:1px solid #000;
-	top:2px;
-	left:7px;
-}
-#clock-hand2{
-	position:absolute;
-	width:5px;
-	height:0px;
-	border:1px solid #000;
-	top:7px;
-	left:7px;
-}
-
-#order{
-	position:absolute;
-	top:10px;
-	left:23px;
-	width:10px;
-	height:15px;
-	border:2px solid #000;
-	-webkit-border-radius:2px;
-	-moz-border-radius:2px;
-	border-radius:2px;
-	border-top-right-radius:5px;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-	opacity:0.8;
-}
-
-#order-line{
-	position:absolute;
-	width:4px;
-	height:0px;
-	border:1px solid #000;
-	top:5px;
-	left:0px;
-}
-
-#order-line:nth-child(2){
-	top:10px;
-	width:6px;
-}
-
-#camera{
-	position:absolute;
-	top:12px;
-	left:23px;
-	width:17px;
-	height:11px;
-	border:2px solid #000;
-	-webkit-border-radius:2px;
-	-moz-border-radius:2px;
-	border-radius:2px;
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-	opacity:0.8;
-}
-
-#camera-optics{
-	position:absolute;
-	top:1px;
-	left:4px;
-	width:5px;
-	height:5px;
-	border:2px solid #000;
-	-webkit-border-radius:50%;
-	-moz-border-radius:50%;
-	border-radius:50%;
-}
-
-#camera-button{
-	position:absolute;
-	top:-3px;
-	left:1px;
-	width:0px;
-	height:0px;
-	border:2px solid #000;
-	border-bottom:0;
-}
-
 /* Grillas Proximos Eventos */
-main{
-    background-color: black;
-}
 .gridProximosEventos {
     display: grid;
     margin-left: 18%;
@@ -875,14 +511,19 @@ main{
 }
 
 .gridProximosEventos > * {
-    border: 2px solid rgba(57, 201, 141, 0.363);
+    border: $verdeBorder;
     background-color: whitesmoke;
-    background-image: radial-gradient( rgba(135, 233, 187, 0.356), rgba(184, 180, 128, 0.89));
+    background-image: $radialBackground-image;
 
 }
 
-.gridProximosEventos > header {
-    grid-area: header;
+.gridProximosEventos {
+    header {
+        grid-area: header;
+    }
+    footer {
+        grid-area: footer;
+    }    
 }
 
 .itemsResumenEvento {
@@ -901,18 +542,10 @@ main{
     grid-area: aside;
     padding-left:0;
 }
-.gridProximosEventos > footer {
-    grid-area: footer;
-}
 
 
 .categorias {
     grid-area: section3;
-    /*
-    justify-content: space-evenly;
-    align-items: flex-start;
-    align-content: space-evenly;
-    */
     padding: 2%;
 }
 
@@ -942,24 +575,100 @@ main{
 
 @media only screen and (min-width: 769px) {
 
+    .gridInscripcionEventosDatosPers > * {
+        border: $verdeBorder;
+        background-color: whitesmoke;
+        background-image: $radialBackground-image;
+    }
+
     .gridInscripcionEventosDatosPers{
         display: grid;
         grid-template-columns: 2fr 2fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 4fr ;
         margin-left: 10%;
         margin-right: 10%;
+
+        header {
+            grid-column: 1/4 ;
+            grid-row:1/1;
+        }
+
+        #apellidoInscripcion {
+            grid-column: 1/1 ;
+            grid-row:2/2;
+            border-right: 0;
+        }
+
+        #nombreInscripcion {
+            grid-column: 2/2 ;
+            grid-row:2/2;
+            border-left: 0;
+        }        
+        #documentoInscripcion {
+            grid-column: 1/1 ;
+            grid-row:3/3;
+            border-right: 0;
+        }
+        #generoInscripcion {
+            grid-column: 2/2 ;
+            grid-row:3/3;
+            border-left: 0;
+        }
+    
+        #fechaNacimientoInscripcion {
+            grid-column: 1/1 ;
+            grid-row:4/4;
+            border-right: 0;
+        }
+        #equipoInscripcion {
+            grid-column: 2/2 ;
+            grid-row:4/4;
+            border-left: 0;
+        }
+    
+        #datosContactoInscripcion {
+            grid-column: 3/3 ;
+            grid-row:2/5;
+
+            div{
+                align-content: space-between;
+                margin-top: 8%;
+                margin-left: 8%;
+                input{
+                    width: 90%;
+                }
+            }
+        }
+    
+        #divTerminosInscripcion {
+            grid-column: 1/4 ;
+            grid-row: 5/5;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 1%;
+        }
+
+        #inscripcionEventosinputApellido{
+            margin-left: 21px;
+        }
+        #inscripcionEventosinputNombre{
+            margin-left: 21px;
+        }
+    
+        #inscripcionEventosinputDocumento {
+            margin-left: 1%;
+        }
+        #inscripcionEventossectionEquipo{
+            width: 53%;
+            margin-left: 7%;
+    
+        }
+    
+        #inscripcionFechaNacimientoInscripcion {
+            margin-left: 2%;
+        }        
     }
 
-    .gridInscripcionEventosDatosPers > * {
-        border: 2px solid rgba(57, 201, 141, 0.363);
-        background-color: whitesmoke;
-        background-image: radial-gradient( rgba(135, 233, 187, 0.356), rgba(184, 180, 128, 0.89));
-    }
-
-    .gridInscripcionEventosDatosPers > header {
-        grid-column: 1/4 ;
-        grid-row:1/1;
-    }
 
     .itemDatosInscripcion{
         display: flex;
@@ -967,87 +676,11 @@ main{
         justify-content: center;
     }
 
-    .gridInscripcionEventosDatosPers > #apellidoInscripcion {
-        grid-column: 1/1 ;
-        grid-row:2/2;
-        border-right: 0;
-    }
-
-    .gridInscripcionEventosDatosPers > #nombreInscripcion {
-        grid-column: 2/2 ;
-        grid-row:2/2;
-        border-left: 0;
-    }
-
-    .gridInscripcionEventosDatosPers > #documentoInscripcion {
-        grid-column: 1/1 ;
-        grid-row:3/3;
-        border-right: 0;
-    }
-
-    .gridInscripcionEventosDatosPers > #generoInscripcion {
-        grid-column: 2/2 ;
-        grid-row:3/3;
-        border-left: 0;
-    }
-
-    .gridInscripcionEventosDatosPers > #fechaNacimientoInscripcion {
-        grid-column: 1/1 ;
-        grid-row:4/4;
-        border-right: 0;
-    }
-    .gridInscripcionEventosDatosPers > #equipoInscripcion {
-        grid-column: 2/2 ;
-        grid-row:4/4;
-        border-left: 0;
-    }
-
-    .gridInscripcionEventosDatosPers > #datosContactoInscripcion {
-        grid-column: 3/3 ;
-        grid-row:2/5;
-    }
-
-    #datosContactoInscripcion > div{
-        align-content: space-between;
-        margin-top: 8%;
-        margin-left: 8%;
-    }
-    #datosContactoInscripcion div input{
-        width: 90%;
-    }
-
-
-    .gridInscripcionEventosDatosPers > #divTerminosInscripcion {
-        grid-column: 1/4 ;
-        grid-row: 5/5;
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 1%;
-    }
-
     .frameTerminos{
         width: 100%;
     }
 
-    #inscripcionEventosinputApellido{
-        margin-left: 21px;
-    }
-    #inscripcionEventosinputNombre{
-        margin-left: 21px;
-    }
 
-    #inscripcionEventosinputDocumento {
-        margin-left: 1%;
-    }
-    #inscripcionEventossectionEquipo{
-        width: 53%;
-        margin-left: 7%;
-
-    }
-
-    #inscripcionFechaNacimientoInscripcion {
-        margin-left: 2%;
-    }
 }
 
 /*********** FIN INSCRIPCION EVENTOS  ****************/
@@ -1092,19 +725,17 @@ main{
 
 .divCargaDatosText {
     transition: height 1s;
+    &:hover {
+        background-color: rgb(235, 243, 191);
+    }
 }
-.divCargaDatosText:hover {
-    background-color: rgb(235, 243, 191);
-    /*height: 35px;*/
 
-}
 
 .divCargaDatosTextArea {
     transition: height 1s;
-}
-.divCargaDatosTextArea:hover {
-    background-color: rgb(235, 243, 191);
-
+    &:hover {
+        background-color: rgb(235, 243, 191);
+    }
 }
 .misDatosFrameTerminos{
     margin-left: 12%;
@@ -1117,10 +748,11 @@ main{
 .textoTerminosDelSitio {
     background-color: #359477;
     height: 20px;
-}
-.textoTerminosDelSitio:hover {
 
-    height: 300px;
+    &:hover {
+
+        height: 300px;
+    }
 }
 
 #misDatosCheckAceptar {
@@ -1235,86 +867,14 @@ main{
 
 }
 
-
-a.buttonVerFuenteNoticiaIzq {
-    grid-area: fuenteIzq;
-    height:12px;
-    width: 18%;
-    align-self:center;
-    justify-self: center;
-    text-align: center;
-    padding: 10px 50px;
-    background: #4479BA;
-    color: #FFF;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    border: solid 1px #20538D;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-a.buttonVerFuenteNoticiaDer {
-    grid-area: fuenteDer;
-    height:12px;
-    width: 18%;
-    align-self:center;
-    justify-self: center;
-    text-align: center;
-    padding: 10px 50px;
-    background: #4479BA;
-    color: #FFF;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    border: solid 1px #20538D;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-a.buttonVerFuenteNoticiaIzq:hover, a.buttonVerFuenteNoticiaDer:hover {
-    background: #359477;
-    border: solid 1px #2A4E77;
-    text-decoration: none;
-}
-
-/*
-.divNovedad--left {
-    float: left;
-    margin: 2%;
-    width: 40%;
-}
-.divNovedad--right {
-    float: right;
-    margin: 2%;
-    width: 50%;
-}
-*/
-
 .imgvideoNovedad {
     width: 100%;
     height: 315px;
-    /*padding-left: 20%;*/
     border: 0;
 }
 
 
-.novedadRadial{
-    background-image: radial-gradient(rgba(0, 89, 255, 0.445), rgba(141, 216, 97, 0.644));
-}
-
-.novedadGradient{
-    background-image: linear-gradient(to left, rgb(135, 135, 233), rgba(233, 233, 79, 0.719));
-}
 /* -------------- FIN NOVEDADES  ------------- */
-
-.ColorFondoGral{
-    background-color: whitesmoke;
-    background-image: radial-gradient(rgba(0, 89, 255, 0.445), rgba(141, 216, 97, 0.644))
-}
 
 
 /* -------------- CONTACTO ------------- */
@@ -1363,44 +923,6 @@ a.buttonVerFuenteNoticiaIzq:hover, a.buttonVerFuenteNoticiaDer:hover {
 #textAreaConsulta{
     padding-right: 15%;
 }
-
-/*
-@media screen and (min-width: 0px) and (max-width: 599px) {
-    #contactoDivGral {
-        display: flex;    
-        border-style:inset; 
-        align-items: center;
-    }
-    #textAreaConsulta {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 767px) {
-  
-    #contactoDivGral {
-        display: flex;    
-        padding-left: 5%; 
-        border-style:inset; 
-        align-items: center;
-    }
-    #textAreaConsulta {
-        width: 80%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1223px) {
-
-    #contactoDivGral {
-        display: flex;    
-        border-style:inset; 
-        align-items: center;
-    }
-    #textAreaConsulta {
-        width: 70%;
-    }
-}
-*/
 
 @media screen and (max-width: 450px) {
 
@@ -1476,12 +998,12 @@ a.buttonVerFuenteNoticiaIzq:hover, a.buttonVerFuenteNoticiaDer:hover {
     margin-bottom: 2%;
     grid-area: detalle;
     }
+    
     h2{
         background-image: linear-gradient(to right, rgba(0, 0, 99, 0.411), rgba(121, 121, 25, 0.521), rgba(90, 90, 155, 0.541), rgba(255, 166, 0, 0.281));
         grid-area: titulo;
     }
 }
-.detalleAyuda > 
 
 .divImagenAyuda{
     grid-area: icono;
