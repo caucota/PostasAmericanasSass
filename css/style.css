@@ -143,6 +143,8 @@
 .novedadGradient {
   background-image: linear-gradient(to left, #8787e9, rgba(233, 233, 79, 0.719)); }
 
+/*index*/
+/*fin index*/
 /*Colors*/
 .yellow {
   /*Gradient*/
@@ -513,7 +515,7 @@ main {
 
 .h1Bienvenida {
   font-size: 45px;
-  background: linear-gradient(to right, rgba(224, 224, 230, 0.938), rgba(211, 212, 117, 0.863), rgba(252, 101, 1, 0.979));
+  background: linear-gradient(to right, rgba(252, 101, 1, 0.979), rgba(211, 212, 117, 0.863), rgba(252, 101, 1, 0.979));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
